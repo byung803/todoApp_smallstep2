@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions';
+import { startAddTodo } from '../actions';
 
 class AddTodo extends React.Component {
     state = {
@@ -9,7 +9,7 @@ class AddTodo extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.value);
+        this.props.startAddTodo(this.state.value);
         this.setState({ value: '' });
     }
 
@@ -33,4 +33,6 @@ class AddTodo extends React.Component {
     }
 }
 
-export default connect(null, { addTodo })(AddTodo);
+
+
+export default connect(null, { startAddTodo })(AddTodo);
